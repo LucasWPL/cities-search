@@ -6,6 +6,7 @@ use GuzzleHttp\Exception\RequestException;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class CitiesService
 {
@@ -29,7 +30,7 @@ class CitiesService
         } catch (RequestException $exception) {
             Log::error('Erro na chamada à API', ['error_message' => $exception->getMessage()]);
 
-            throw new \DomainException('Ocorreu um erro na chamada à API', 500);
+            throw new HttpException('Ocorreu um erro na chamada à API', 500);
         }
     }
 
