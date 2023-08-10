@@ -32,15 +32,15 @@ Este projeto implementa uma API para pesquisa e listagem de municípios de uma u
 
 O projeto implementa a seguinte rota para a API:
 
-- `GET /uf/{uf}/listar-municipios`: Retorna uma lista de municípios da unidade federativa (UF) especificada. Esta rota suporta os seguintes parâmetros opcionais:
+- `GET /api/uf/{uf}/listar-municipios`: Retorna uma lista de municípios da unidade federativa (UF) especificada. Esta rota suporta os seguintes parâmetros opcionais:
   - `per_page`: Define a quantidade de itens por página para a paginação dos resultados.
   - `page`: Define a página atual para a paginação dos resultados.
 
 Exemplo de uso:
 
 ```
-GET /uf/RJ/listar-municipios
-GET /uf/RJ/listar-municipios?per_page=20&page=2
+GET /api/uf/RJ/listar-municipios
+GET /api/uf/RJ/listar-municipios?per_page=20&page=2
 ```
 
 A inclusão dos parâmetros `per_page` e `page` permite a navegação fácil pelos resultados, proporcionando uma experiência amigável ao usuário final.
