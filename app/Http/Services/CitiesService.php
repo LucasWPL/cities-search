@@ -2,7 +2,7 @@
 
 namespace App\Http\Services;
 
-use GuzzleHttp\Exception\RequestException;
+use Illuminate\Http\Client\RequestException;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
@@ -30,7 +30,7 @@ class CitiesService
         } catch (RequestException $exception) {
             Log::error('Erro na chamada à API', ['error_message' => $exception->getMessage()]);
 
-            throw new HttpException('Ocorreu um erro na chamada à API', 500);
+            throw new HttpException(500, 'Ocorreu um erro na chamada à API');
         }
     }
 

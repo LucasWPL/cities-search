@@ -6,6 +6,7 @@ use DomainException;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Controller extends BaseController
 {
@@ -18,7 +19,7 @@ class Controller extends BaseController
 
         if ($startIndex >= $totalItems) {
             $message = "A página {$page} é inválida. Total de itens: {$totalItems}, Itens por página: {$perPage}";
-            throw new DomainException($message, 400);
+            throw new HttpException(400, $message);
         }
 
         $endIndex = min($startIndex + $perPage - 1, $totalItems - 1);
