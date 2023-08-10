@@ -10,7 +10,7 @@ class UfController extends Controller
 {
     public function listCities(string $uf, CitiesService $citiesService)
     {
-        if (!in_array($uf, Ufs::POSSIBLES)) {
+        if (!in_array(strtoupper($uf), Ufs::POSSIBLES)) {
             throw new HttpException(400, 'UF inválida');
         }
         $cities = $citiesService->listCitiesOfUf($uf);
