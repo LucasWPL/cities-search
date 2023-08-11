@@ -1,7 +1,6 @@
 # Cities search
 
-Este projeto implementa uma API para pesquisa e listagem de municípios de uma unidade federativa (UF). A API utiliza uma fonte de dados externa para obter os municípios, garantindo informações precisas e atualizadas.
-
+Este projeto implementa uma API para pesquisa e listagem de municípios de uma unidade federativa (UF). A API utiliza uma fonte de dados externa para obter os municípios, garantindo informações precisas e atualizadas, e oferece um mecanismo de fallback para casos de indisponibilidade da fonte principal.
 ## Requisitos
 
 - [Docker](https://docs.docker.com/engine/install/ubuntu/)

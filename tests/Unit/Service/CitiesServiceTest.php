@@ -10,18 +10,28 @@ class CitiesServiceTest extends TestCase
 {
     public function testListCitiesOfUfSuccess()
     {
-        $apiResponse = json_encode(['city1', 'city2']);
+        $apiResponse = [
+            ['nome' => 'City1', 'codigo_ibge' => '123'],
+            ['nome' => 'City2', 'codigo_ibge' => '456'],
+        ];
+
         Http::fake([
-            '*' => Http::response($apiResponse, 200)
+            '*' => Http::response(json_encode($apiResponse), 200)
         ]);
 
         $service = new CitiesService();
         $result = $service->listCitiesOfUf('RN');
 
-        $this->assertEquals(['city1', 'city2'], $result);
+        $expectedResult = [
+            ['name' => 'City1', 'ibge_code' => '123'],
+            ['name' => 'City2', 'ibge_code' => '456'],
+        ];
+
+        $this->assertEquals($expectedResult, $result);
         $this->assertTrue(Cache::has('cities_RN'));
-        $this->assertEquals(['city1', 'city2'], Cache::get('cities_RN'));
+        $this->assertEquals($expectedResult, Cache::get('cities_RN'));
     }
+
 
     public function testListCitiesOfUfApiError()
     {
@@ -30,7 +40,7 @@ class CitiesServiceTest extends TestCase
         ]);
 
         $this->expectException(HttpException::class);
-        $this->expectExceptionMessage('Ocorreu um erro na chamada à API');
+        $this->expectExceptionMessage('Ocorreu um erro na chamada às APIs');
 
         $service = new CitiesService();
         $service->listCitiesOfUf('RN');
