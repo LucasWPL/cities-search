@@ -1,8 +1,17 @@
 {
-    "name": "laravel/laravel",
+    "name": "lucaswpl/cities-search",
+    "authors": [
+        {
+            "name": "Pedro Lucas",
+            "email": "pedro.lucaswpl@gmail.com"
+        }
+    ],
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "Este projeto implementa uma API para pesquisa e listagem de municípios de uma unidade federativa (UF)",
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.1",
@@ -22,9 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {
