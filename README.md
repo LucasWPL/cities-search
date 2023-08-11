@@ -21,12 +21,15 @@ Este projeto implementa uma API para pesquisa e listagem de municípios de uma u
 ## Instalação
 
 1. Clone o repositório: `git clone https://github.com/LucasWPL/cities-search.git`
-2. Inicie os containers: `make up`
-3. Acesse o container PHP: `make bash`
-4. Instale as dependências: `composer install`
-5. Crie o arquivo `.env` a partir do `.env.example` e configure as variáveis de ambiente.
-6. Teste a rota principal por meio do Postman ou navegador.
+2. Instale as dependências: `composer install`
+3. Crie o arquivo `.env` a partir do `.env.example` e configure as variáveis de ambiente.
+4. Inicie os containers: `make up`
 
+    Nota: a imagem base não é otimizada, talvez demore alguns minutos para iniciar. Aguarde.
+
+5. Teste a rota principal por meio do Postman ou navegador.
+
+Caso seja necessário utilizar o terminal do container, rode `make bash`
 ## Rotas
 
 O projeto implementa a seguinte rota para a API:
