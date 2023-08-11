@@ -3,4 +3,4 @@ up:
 down:
 	docker compose down
 bash:
-	docker exec -it cities-search-sail-1 bash
+	docker exec -it cities-search-laravel.test-1 bash

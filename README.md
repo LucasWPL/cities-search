@@ -4,6 +4,7 @@ Este projeto implementa uma API para pesquisa e listagem de municípios de uma u
 ## Requisitos
 
 - [Docker](https://docs.docker.com/engine/install/ubuntu/)
+- [Composer](https://getcomposer.org/download/)
 
 ## Tecnologias Utilizadas
 
@@ -22,10 +23,12 @@ Este projeto implementa uma API para pesquisa e listagem de municípios de uma u
 
 1. Clone o repositório: `git clone https://github.com/LucasWPL/cities-search.git`
 2. Inicie os containers: `make up`
-3. Acesse o container PHP: `make bash`
-4. Instale as dependências: `composer install`
-5. Crie o arquivo `.env` a partir do `.env.example` e configure as variáveis de ambiente.
-6. Teste a rota principal por meio do Postman ou navegador.
+
+    Nota: Talvez esse comando demore um pouco, a imagem base dele não é optimizada. Aguarde.
+
+3. Acesse o container e instale as dependências:`make bash` e `composer install`
+4. Crie o arquivo `.env` a partir do `.env.example` e configure as variáveis de ambiente.
+5. Teste a rota principal por meio do Postman ou navegador.
 
 ## Rotas
 
